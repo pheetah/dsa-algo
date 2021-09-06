@@ -6,7 +6,6 @@ function bubbleSort(array){
     for(k = 0; k < inner_cycle_count; k++){
         for(i = 0; i < array.length; i++){
             let temp;
-
             if(array[i] > array[i+1]){
                 temp = array[i];
                 array[i] = array[i+1];
