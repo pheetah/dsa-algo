@@ -85,15 +85,43 @@ class SinglyLinkedList{
         return this;
     }
 
+    get(index){
+        var returnValue = this.head;
+        var i;
+
+        for(i = 0; i < index; i++){
+            returnValue = returnValue.next;
+        }
+
+        return returnValue;
+    }
+
+    set(index, value){
+        var foundIndex = this.get(index);
+        foundIndex.val = value;
+
+        return foundIndex;
+    }
+
+    insert(index, value){
+        var foundIndex = this.get(index - 1);
+        var node = new Node(value);
+
+        node.next = foundIndex.next;
+        foundIndex.next = node;
+
+        this.length++;
+        return node;
+    }
+
 }
 
 
 var list = new SinglyLinkedList();
 
 list.push('HELLO');
+list.push('HOW ARE YOU');
+list.push('FINE TOO');
 list.push('GOODBYE');
 list.push('!');
 console.log(list);
-
-list.pop();
- console.log(list)
