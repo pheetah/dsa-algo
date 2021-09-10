@@ -114,6 +114,27 @@ class SinglyLinkedList{
         return node;
     }
 
+    remove(index){
+        var foundIndex = this.get(index - 1);
+        foundIndex.next = foundIndex.next.next;
+
+        this.length--;
+        return true;
+    }
+
+    reverse(){
+        var node = this.head;
+        this.head= this.tail;
+        //this.tail = node;
+
+        var store;
+        var next = null;
+
+        for(let i = 0; i < this.length; i++){
+            next = node.next;
+        }
+    }
+
 }
 
 
