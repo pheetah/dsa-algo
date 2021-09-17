@@ -31,7 +31,14 @@ function kmpMatching(str, word){
     var i = 0;
 
     while (i < str.length) {
-      
+      console.log(i, "count", errorCount, "errorCount")
+
+      if( (i > 3) && (i <= 6) && (errorCount <= 1) ){
+        return true;
+      }else if( (i > 6) && (i < 8) && (errorCount <= 2) ){
+        return true;
+      }
+
       if (str.charAt(i) === word.charAt(j)) {
         i++;
         j++;
@@ -52,14 +59,6 @@ function kmpMatching(str, word){
         }
     
       }
-
-    if(i > 3 && errorCount == 1){
-        console.log('first');
-        return true;
-    }else if(i > 5 && errorCount <=2){
-      console.log('second')  
-      return true;
-    }
  
     }
   
