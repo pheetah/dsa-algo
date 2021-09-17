@@ -102,6 +102,50 @@ class DoublyLinkedList{
             }
         }
     }
+
+    set(index, value){
+        let node = this.get(index);
+        
+        if(node.val !== null){
+            node.val= value;
+        }
+    }
+
+    insert(index, value){
+
+        //some index checks missing here
+
+        let nextNode = this.get(index);
+        let prevNode = nextNode.prev;
+        let newNode = new Node(value);
+
+        prevNode.next = newNode;
+        newNode.prev = prevNode;
+
+        newNode.next = nextNode;
+        nextNode.prev = newNode;
+
+        this.length++;
+
+        return true;
+    }
+
+    remove(index){
+
+        //some index checks missing here
+
+        let node = this.get(index);
+
+        let prevNode = node.prev;
+        let nextNode = node.next;
+
+        prevNode.next = nextNode;
+        nextNode.prev = prevNode;
+
+        node = null;
+
+        this.length--;
+    }
 }
 
 list = new DoublyLinkedList();
