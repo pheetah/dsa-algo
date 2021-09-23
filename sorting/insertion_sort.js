@@ -6,10 +6,9 @@ function insertionSort(array){
         for(j = i - 1; j >= 0; j--){
             if(array[j] > currentValue){
                 array[j+1] = array[j];
-            }else{
-                array[j+1] = currentValue;
-                break;
             }
+                
+            array[j+1] = currentValue;
         }
     }
 
